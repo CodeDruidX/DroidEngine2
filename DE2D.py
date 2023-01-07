@@ -63,8 +63,9 @@ import pyautogui
 WIDTH, HEIGHT = pyautogui.size()
 
 
-
-
+# это был эксперимент с псевдоVR для псевдо3d при помощи ардуинки и УЗ датчика
+# Всё сработало, но эта фича бы мешала протестить все случайному человеку
+"""
 import serial
 SERIAL_RATE = 9600
 SERIAL_PORT = 'COM8'
@@ -77,8 +78,8 @@ def updatedist():
         l=ser.readline().decode()
         DIST=int(l.strip())
 
-
-
+"""
+DIST=100 #Примерно метр от вашего лица до монитора
 
 
 pyautogui.FAILSAFE = False
@@ -153,7 +154,7 @@ while True:
         camera[1] += np.pi * 2
     screen.fill(BLACK)
 
-    updatedist()
+    #updatedist()
     for i, ii in zip(range(1, 9), range(1, 9)):
         angle, x, y1, y2 = render(camera, np.float32([i, ii]), 0.6, d=DIST*pix_per_cm)
         if (
