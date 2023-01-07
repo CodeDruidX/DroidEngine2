@@ -1,4 +1,4 @@
-v = "2.0.1"
+v = "2.1.1"
 print(f"Droid 2d Engine v{v} - rebuild")
 
 
